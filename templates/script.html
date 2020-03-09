@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}Big Tings{% endblock %}
+
+{% block body %}
+{% if session.logged_in %}
+<article>
+	Output from container server is:<br> {{ my_output }}
+</article>
+{% endif %}
+{% endblock %}

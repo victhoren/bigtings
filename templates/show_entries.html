@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}Новости{% endblock %}
+{% block title %}Images{% endblock %}
 
 {% block body %}
 {% for entry in entries %}
@@ -14,7 +14,8 @@
         {{ entry.date | strftime }}
       </time>
       {% if session.logged_in %} |
-      <a href="{{ url_for('del_entry', post_id=entry.id) }}">Удалить</a>
+      <a href="{{ url_for('del_entry', post_id=entry.id) }}">Delete entry</a>
+      <a href="{{ url_for('script') }}">Run container</a>
       {% endif %}
     </p>
   </header>
@@ -28,6 +29,7 @@
   </div>
 </article>
 {% else %}
-<article><p><em>No entries.... </em></p></article>
+<article><p><em>No images... </em></p></article>
 {% endfor %}
+<div><a href="{{ url_for('script2') }}">Run apache container</a></div>
 {% endblock %}

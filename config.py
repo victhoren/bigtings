@@ -8,3 +8,9 @@ SQLALCHEMY_ECHO = True
 DEBUG = False
 USERNAME = 'admin'
 PASSWORD = 'admin'
+
+USERNAME = 'dkp'
+PASSWORD = '1234'
+
+USERNAME = 'erik'
+PASSWORD = 'Linux4Ever'

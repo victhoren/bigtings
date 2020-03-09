@@ -7,20 +7,21 @@ from flask import (
     Flask, request, session, redirect,
     url_for, abort, render_template, flash
 )
+import subprocess
+from subprocess import Popen, PIPE
+from subprocess import check_output
+
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
-
 
 @app.teardown_appcontext
 def shutdown_session(exception=None):
     db_session.remove()
 
-
 @app.template_filter('strftime')
 def _jinja2_datetimeformat(value, format='%H:%M / %d-%m-%Y'):
     return value.strftime(format)
-
 
 @app.route('/')
 def show_entries():
@@ -67,7 +68,6 @@ def del_entry(post_id):
     db_session.commit()
     return redirect(url_for('show_entries'))
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if session.get('logged_in'):
@@ -91,3 +91,21 @@ def logout():
         session.pop('logged_in', None)
         flash('You were logged out')
     return redirect(url_for('show_entries'))
+
+@app.route('/script',methods=['GET',])
+def script():
+    command = "./script.sh"
+    my_output = subprocess.check_output(command, shell=True).decode('utf-8')
+    return render_template("/script.html", my_output=my_output)
+
+@app.route('/script2',methods=['GET',])
+def script2():
+    command2 = "./script2.sh"
+    my_output2 = subprocess.check_output(command2, shell=True).decode('utf-8')
+    return render_template("/script2.html", my_output2=my_output2)
+
+
+
+
+
+

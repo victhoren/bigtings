@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
 
-{% block title %}Добавить новость{% endblock %}
+{% block title %}Big Tings{% endblock %}
 
 {% block body %}
 {% if session.logged_in %}
 <article>
 <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
 	<dl>
-		<dt>Заголовок:
+		<dt>Image:
 		<dd>
 			<input type="text" size=35 name="title">
-		<dt>Сообщение:
+		<dt>Description
 		<dd><textarea name=text rows=4 cols=40></textarea>
-		<dd><input type="submit" value="Добавить">
+		<dd><input type="submit" value="Submit">
 	</dl>
 </form>
 </article> <!-- input -->

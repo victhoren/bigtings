@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>{% block title %}{% endblock %} - Hi-Tec</title>
+  <title>{% block title %}{% endblock %} - Big Tings</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,7 +20,6 @@
   <header role="banner">
     <hgroup>
       <a href="/" id="super-logo"></a>
-      <h1><a href="/">Новости высоких технологий</a></h1>
     </hgroup>
   </header>
 </header>
@@ -28,16 +27,16 @@
 <nav role="navigation">
   <ul class="subscription">
 		{% if not session.logged_in %}
-		<li><a href="{{ url_for('login') }}">Вход</a></li>
+		<li><a href="{{ url_for('login') }}">Login</a></li>
 		{% else %}
-		<li><a href="{{ url_for('logout') }}">Выход</a></li>
+		<li><a href="{{ url_for('logout') }}">Logout</a></li>
 		{% endif %}
   </ul>
 
   <ul class="main-navigation">
-    <li><a href="/">Новости</a></li>
+    <li><a href="/">Index</a></li>
 		{% if session.logged_in %}
-		<li><a href="{{ url_for('add_entry') }}">Добавить новость</a></li>
+		<li><a href="{{ url_for('add_entry') }}">Add image</a></li>
 		{% endif %}
   </ul>
 </nav>
@@ -51,24 +50,19 @@
 	{% endfor %}
 	{% block body %} {% endblock %}
 	<!-- div class="pagination">
-			<a class="prev" href="/page/2/">&larr; Раньше</a>
+			<a class="prev" href="/page/2/">&larr; knas</a>
   </div -->
 </div>
 
 <aside class="sidebar">
 <section>
-	<h2 class="aboutpod" id="aboutpod" style="margin-top:0; font-size:11pt; font-weight: normal; text-transform: none; color: #5e5e5e">
-		Разговоры на темы хайтек, высоких компьютерных технологий, гаджетов, облаков, программирования и прочего интересного из мира ИТ.
-	</h2>
+	<h1 class="aboutpod" id="aboutpod" style="margin-top:0; font-size:11pt; font-weight: normal; text-transform: none; color: #5e5e5e">
+		Nyheter
+	</h1>
 </section>
 
 <section>
-		<h2>Полезное</h2>
-
-		<ul class="links">
-				<li><a href="https://stackoverflow.com">stackoverflow.com</a></li>
-				<li><a href="https://linux.org.ua">linux.org.ua</a></li>
-		</ul>
+	<h3>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
 </section>
 </aside>
 
@@ -78,7 +72,7 @@
 
 	<footer role="contentinfo">
 		<p>
-			Some rights reserved, 2017 - <a href="mailto:example@example.com">example@example.com</a>
+			All rights reserved, 2020 - <a href="mailto:admin@bigtings.com">admin@bigtings.com</a>
 		</p>
 	</footer>
 
